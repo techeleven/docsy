@@ -5,12 +5,12 @@
             <img src="{{ .Site.BaseURL }}img/tech11-e1574785576969.png" alt="tech11 GmbH">
 			<span>Docs</span>
         </a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_navbar" aria-controls="main_navbar" aria-expanded="true" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_navbar" aria-controls="main_navbar" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
 		<div class="collapse navbar-collapse justify-content-end" id="main_navbar">
-			<ul class="navbar-nav mr-4 mb-2 mb-lg-0 pl-4 pl-lg-2"  style="margin-left: 8rem">
+			<ul class="navbar-nav mr-4 mb-2 mb-lg-0 pl-4 pl-lg-2">
 				{{ $p := . }}
 				{{ range .Site.Menus.main }}
 				<li class="nav-item dropdown mr-4 mb-2 mb-lg-0">
@@ -27,12 +27,12 @@
 				</li>
 					{{ end }}
 					{{ if  .Site.Params.versions }}
-				<li class="nav-item dropdown mr-4 d-none d-lg-block">
+				<li class="nav-item mr-4 d-none d-lg-block">
 					{{ partial "navbar-version-selector.html" . }}
 				</li>
 					{{ end }}
 					{{ if  (gt (len .Site.Home.Translations) 0) }}
-				<li class="nav-item dropdown mr-4 d-none d-lg-block">
+				<li class="nav-item mr-4 d-none d-lg-block">
 					{{ partial "navbar-lang-selector.html" . }}
 				</li>
 				{{ end }}
