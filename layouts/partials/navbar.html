@@ -26,22 +26,23 @@
 
 				</li>
 					{{ end }}
+					<li class="nav-item dropdown mr-4 mb-2 mb-lg-0" style="margin-top: 10px; align-self: flex-start;">
+						{{ partial "dark-mode.html" . }}
+					</li>
+					<li  class="nav-item dropdown mr-4 mb-2 mb-lg-0">
+						{{ partial "search-input.html" . }}
+					</li>
 					{{ if  .Site.Params.versions }}
-				<li class="nav-item mr-4 d-none d-lg-block">
+				<li class="nav-item dropdown mr-4 mb-2 mb-lg-0">
 					{{ partial "navbar-version-selector.html" . }}
 				</li>
 					{{ end }}
 					{{ if  (gt (len .Site.Home.Translations) 0) }}
-				<li class="nav-item mr-4 d-none d-lg-block">
+				<li class="nav-item dropdown mr-4 mb-2 mb-lg-0">
 					{{ partial "navbar-lang-selector.html" . }}
 				</li>
 				{{ end }}
 			</ul>
 		</div>
-		
-	
-		<div class="navbar-nav d-none d-lg-block" style="margin-right: 20px;">{{ partial "dark-mode.html" . }}</div>
-
-		<div class="navbar-nav d-none d-lg-block">{{ partial "search-input.html" . }}</div>
 	</div>
 </nav>
